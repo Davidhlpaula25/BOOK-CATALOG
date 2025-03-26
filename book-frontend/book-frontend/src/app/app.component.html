@@ -1,0 +1,26 @@
+<div class="header">
+  <h1>Catálogo de Livros</h1>
+</div>
+<div class="register">
+  <div class="box"> 
+    <h2 style="margin-bottom: 6px;">Adicionar Livro</h2>
+  <div class="boxes">
+    <input [(ngModel)]="newBook.title" placeholder="Título" />
+    <input [(ngModel)]="newBook.author" placeholder="Autor" />
+    <input [(ngModel)]="newBook.publicationYear" type="number" placeholder="Ano" />
+    <button class="addButton" (click)="addBook()">Adicionar</button>
+  </div>
+  </div>
+</div>
+<div class="show">
+  <h2>Lista de Livros</h2>
+  <div class="livros" style="padding-top: 8px;">
+    <ul>
+      <li *ngFor="let book of books" class="card">
+        <p class="title">Livro: {{ book.title }}</p>
+        <p class="author">Autores: {{ book.author }}</p>
+        <p class="year">Ano de publicação: {{ book.publicationYear }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
